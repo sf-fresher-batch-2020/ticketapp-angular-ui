@@ -1,0 +1,36 @@
+<h2 id="hero">Create Account</h2>
+<form (ngSubmit)="register(f)" #f="ngForm" autocomplete="off">
+
+    <label>
+      <p class="label-txt">ENTER YOUR EMAIL</p>
+      <input type="email" name="email" id="email" class="input"  [(ngModel)]="email" required autofocus>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR NAME</p>
+      <input type="text" name="name" class="input" id="name"  [(ngModel)]="name" required >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR PASSWORD</p>
+      <input type="password" name="password" id="password" class="input" [(ngModel)]="password" required>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+        <p class="label-txt">SELECT ROLE</p>
+        <select name="role" class="input" [(ngModel)]="role" required >
+            <option class="input" value="USER">User</option>
+            <option class="input" value="ADMIN">Admin</option>
+        </select>
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+      <button [disabled]="f.invalid">Submit</button>
+  </form>
