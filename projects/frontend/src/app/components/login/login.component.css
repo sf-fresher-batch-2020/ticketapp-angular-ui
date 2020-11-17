@@ -1,0 +1,22 @@
+h2 {
+   margin-top: 20px;
+   text-align: center;
+   font-size: 48px;
+   font-weight: 700;
+   line-height: 56px;
+   font-family: "Philosopher", sans-serif;
+   color: #71c55d;
+ }
+#login .container #login-row #login-column #login-box {
+    margin-top: -90px ;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
