@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private http: HttpClient,private router:Router) { }
+  constructor(private http: HttpClient,private router:Router, private userService:UserService, private toastr:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -23,13 +25,12 @@ export class RegisterComponent implements OnInit {
     let generateUserId =  Math.floor(100 + Math.random() * 900);
     let formData = { registerid: generateUserId, name: this.name, email: this.email, password: this.password, role: this.role };
     console.log(JSON.stringify(formData));
-    let url = "http://ticketapp-angular.herokuapp.com/api/users";
-    this.http.post(url, formData).subscribe(res => {
+   this.userService.register(formData).subscribe(res => {
       console.log(res);
-      alert("Successfully Registered");
+     this.toastr.success("Successfully Registered");
       this.router.navigate(['login']);
     },err=>{
-      alert("Successfully Failed");
+      this.toastr.error("Successfully Failed");
     });
   }
 }
