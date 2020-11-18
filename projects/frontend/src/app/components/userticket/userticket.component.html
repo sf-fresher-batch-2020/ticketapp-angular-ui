@@ -1,0 +1,47 @@
+<h2 id="hero">Generate Ticket</h2>
+<form (ngSubmit)="ticket()" #f="ngForm" autocomplete="off">
+    <label>
+      <p class="label-txt">ENTER TICKET TITLE</p>
+      <input type="text" name="title" class="input" id="title"  [(ngModel)]="title" required >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER MOBILE NUMBER</p>
+      <input type="tel" name="mobile" class="input" id="mobile"  [(ngModel)]="mobile" required >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">SELECT YOUR DEPARTMENT</p>
+      <select name="department" class="input" [(ngModel)]="department" required >
+        <option class="input" value="Development">Development</option>
+        <option class="input" value="Sales">Sales</option>
+        <option class="input" value="CSML">Csml</option>
+        <option class="input" value="Networking">Networking</option>
+    </select>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+        <p class="label-txt">SELECT TICKET PRIORITY</p>
+        <select name="priority" class="input" [(ngModel)]="priority" required >
+            <option class="input" value="Low">Low</option>
+            <option class="input" value="Medium">Medium</option>
+            <option class="input" value="High">High</option>
+        </select>
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+        <label>
+      <p class="label-txt">ENTER TICKET DESCRIPTION</p>
+      <textarea name="description" class="input" id="description"  [(ngModel)]="description" required ></textarea>      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+      <button [disabled]="f.invalid">Submit</button>
+  </form>
