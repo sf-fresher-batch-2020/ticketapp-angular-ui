@@ -1,75 +1,43 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <a class="navbar-brand" href="#">HelpDesk</a>
-    
+
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
                 <a class="nav-link" routerLink="home" data-loggedin=false routeLink="home">Home</a>
             </li>
-           
-            <li class="nav-item dropdown" data-loggedin="true" >
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
+
+            <li class="nav-item dropdown" data-loggedin="true" *ngIf="loggedInUser && loggedInUser.role=='USER'">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Services</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" routerLink="userticket" data-loggedin=true>Generate Ticket</a>
-                     <a class="dropdown-item" routerLink="myticket" data-loggedin=true>My Tickets</a>
-                     <a class="dropdown-item " routerLink="" data-loggedin=true></a>
-                    <a class="dropdown-item" routerLink="" data-loggedin=true></a>
-                    <a class="dropdown-item" routerLink="" data-loggedin=true></a>
-                    
+                    <a class="dropdown-item" routerLink="myticket" data-loggedin=true>My Tickets</a>
                 </div>
+            </li>
+            <li class="nav-item" *ngIf="loggedInUser && loggedInUser.role=='ADMIN'">
+                <a class="nav-link" routerLink="techdashboard" data-loggedin=true routeLink="techdashboard">Admin
+                    Dashboard</a>
+            </li>
+            <li class="nav-item" *ngIf="loggedInUser && loggedInUser.role=='ADMIN'">
+                <a class="nav-link" routerLink="listuser" data-loggedin=true routeLink="listuser">List All User</a>
             </li>
         </ul>
-           <!-- <li class="nav-item dropdown" data-loggedin="true" *ngIf="loggedInUser && loggedInUser.role=='USER'">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Payments</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" routerLink="view-payees">List Payee</a>          
-                    <a class="dropdown-item" routerLink="add-payee" data-loggedin=true>Add Payee</a>
-                    <a class="dropdown-item disabled" href="recharge.html" data-loggedin=true>Recharge</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown" data-loggedin=true *ngIf="loggedInUser && loggedInUser.role=='USER'">
-                <a class="nav-link dropdown-toggle disabled" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CreditCard</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="add_creditcard.html" data-loggedin=true *ngIf="loggedInUser">Add Credit Card</a>          
-                    <a class="dropdown-item" href="list_creditcard.html" data-loggedin=true *ngIf="loggedInUser">List Credit Card</a>
-                    
-                </div>
-            </li>
-            <li class="nav-item dropdown" data-loggedin="true" *ngIf="loggedInUser && loggedInUser.role=='ADMIN'">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" routerLink="users">List Users</a>          
-                    <a class="dropdown-item" routerLink="employees" data-loggedin=true>List Employees</a>
-                    
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="create-account" data-loggedin=true *ngIf="loggedInUser">Create Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="verify-account" data-loggedin=true *ngIf="loggedInUser && loggedInUser.role=='ADMIN'">Account Activation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="kyc.html" data-loggedin=true *ngIf="loggedInUser" >KYC</a>
-            </li>-->
-            
-            
-        
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item ">
-                <a class="nav-link" routerLink="login" data-loggedin=false >Login</a>
+                <a class="nav-link" routerLink="login" data-loggedin=false *ngIf="!loggedInUser">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="register" data-loggedin=false >Register</a>
-            </li>
-           <!-- <li class="nav-item" *ngIf="loggedInUser">
-                <a class="nav-link" href="" data-loggedin=true style="display: block;" > 
-                    Welcome {{loggedInUser.name}} ( {{loggedInUser.id}} )</a>
+                <a class="nav-link" routerLink="register" data-loggedin=false *ngIf="!loggedInUser">Register</a>
             </li>
             <li class="nav-item" *ngIf="loggedInUser">
-                <a class="nav-link" href="" (click)="logout()" data-loggedin=true >(Logout) </a>
-            </li>-->
+                <a class="nav-link" href="" data-loggedin=true style="display: block;">
+                    Welcome {{loggedInUser.name}}</a>
+            </li>
+            <li class="nav-item" *ngIf="loggedInUser">
+                <a class="nav-link" href="" (click)="logout()" data-loggedin=true>(Logout) </a>
+            </li>
         </ul>
-        
+
     </div>
 </nav>

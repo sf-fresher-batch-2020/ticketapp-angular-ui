@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -8,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  loggedInUser;
+
+  constructor(private authService:AuthService,private router:Router) {
+    this.loggedInUser = this.authService.getLoggedInUser();
+   }
 
   ngOnInit(): void {
+  }
+
+
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(["login"]);
   }
 
 }
