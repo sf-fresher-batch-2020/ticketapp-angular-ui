@@ -1,0 +1,82 @@
+<h2 id="hero">User's Ticket</h2>
+<br/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <label>Search By Priority</label>
+            <select name="priority" (change)="filterByPriority($event.target.value)">
+                <option value="ALL">--ALL--</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label>Search By Status</label>
+            <select id="priority" (change)="filterByStatus($event.target.value)">
+                <option value="ALL">--ALL--</option>
+                <option value="Open">Open</option>
+                <option value="Close">Close</option>
+                <option value="In-progress">In-progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label>Search By Assigned To</label>
+            <select id="priority" (change)="filterByAssigned($event.target.value)">
+                <option value="ALL">--ALL--</option>
+                <option value="Development Team">Development Team</option>
+                <option value="Hardware Team">Hardware Team</option>
+                <option value="Software Team">Software Team</option>
+                <option value="Sales Team">Sales Team</option>
+                <option value="Csml Team">Csml Team</option>
+                <option value="Networking Team">Networking Team</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label>Search By Unassigned Ticket</label>
+            <select id="priority" (change)="filterByUnassigned($event.target.value)">
+                <option value="ALL">--ALL--</option>
+                <option value="Team">Unassigned Ticket</option>    
+            </select>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sno</th>
+                        <th>Ticket No</th>
+                        <th>Title</th>
+                        <th>Department </th>
+                        <th>Ticketstatus</th>
+                        <th>Priority</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ticket of ticketList;let i=index;">
+                        <td>{{i+1}}</td>
+                        <td>{{ticket.id}}</td>
+                        <td>{{ticket.title}}</td>
+                        <td>{{ticket.department}}</td>
+                        <td>{{ticket.ticketstatus}}</td>
+                        <td>{{ticket.priority}}</td>
+                        <td>
+                            <button routerLink="../userticketdetail/{{ticket.id}}" class="btn btn-success">View User Ticket
+                                Details</button> &nbsp;
+                            <button routerLink="../edituserticketdetail/{{ticket.id}}" class="btn btn-danger">Edit User Ticket
+                                Details</button> &nbsp;
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
