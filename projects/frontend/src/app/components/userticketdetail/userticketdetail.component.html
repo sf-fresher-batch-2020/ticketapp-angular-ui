@@ -1,0 +1,77 @@
+<h2 id="hero">User Ticket Details</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <table class="table table-bordered" id="tablestyle">
+                <thead>
+                    <tr>
+                        <th>Ticket No</th>
+                    </tr>
+                    <tr>
+                        <th>Title</th>
+                    </tr>
+                    <tr>
+                        <th>Department </th>
+                    </tr>
+                    <tr>
+                        <th>Mobile Number</th>
+                    </tr>
+                    <tr>
+                        <th>Ticketstatus</th>
+                    </tr>
+                    <tr>
+                        <th>Created By</th>
+                    </tr>
+                    <tr>
+                        <th>Assigned Team</th>
+                    </tr>
+                    <tr>
+                        <th>Priority</th>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <th>Created Date</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="col-9">
+            <table class="table table-bordered" id="details">
+                <tbody *ngIf="ticket">
+                    <tr>
+                        <td>{{ticket.id}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.title}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.department}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.mobilenumber}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.ticketstatus}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.createdBy}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.team}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.priority}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ticket.createdDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
