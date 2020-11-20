@@ -2,9 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from '../auth.service';
-import { TicketService } from '../ticket.service';
-import { UserService } from '../user.service';
+import { AuthService } from '../../services/auth.service';
+import { TicketService } from '../../services/ticket.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-userticket',

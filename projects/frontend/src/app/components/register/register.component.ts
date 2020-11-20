@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from '../user.service';
+import { UserService } from '../../services/user.service';
+
 
 @Component({
   selector: 'app-register',

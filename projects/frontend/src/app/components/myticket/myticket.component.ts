@@ -1,9 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { TicketService } from '../ticket.service';
-import { UserService } from '../user.service';
+import { AuthService } from '../../services/auth.service';
+import { TicketService } from '../../services/ticket.service';
 
 @Component({
   selector: 'app-myticket',
@@ -12,7 +11,7 @@ import { UserService } from '../user.service';
 })
 export class MyticketComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService,
-    private ticketService: TicketService, private UserService: UserService) { }
+    private ticketService: TicketService) { }
 
     loggedInUser;
   ticketList: any;

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { TicketService } from '../ticket.service';
+import { AuthService } from '../../services/auth.service';
+import { TicketService } from '../../services/ticket.service';
+
 
 @Component({
   selector: 'app-edituserticketdetail',
