@@ -1,0 +1,55 @@
+<h2>List Users</h2>
+<!--JSON Pipe =>Transform the Data = JSON pipe : JSON.stringify(users) -->
+<!--{{users | json}}-->
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th> S.no </th>
+                    <th> User Id</th>
+                    <th> Email </th>
+                    <th> Name </th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of user;let i=index;">
+                    <td>{{i+1}}</td>
+                    <td>{{ticket.id}}</td>
+                    <td>{{ticket.email}}</td>
+                    <td>{{ticket.name}}</td>
+                    <td>{{ticket.role}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--<table border="1">
+    <thead>
+        <tr><th>Sno</th><th>Name</th></tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{u.name}}</td>
+            <td><button type="button" (click)="view(u.id)">View</button></td>
+            <td><button type="button" (click)="deleteUser(u.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="selectedUser">
+    <h3>User Details</h3>
+    <table border="1">
+        <thead>
+            <tr><th>Name</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{selectedUser.name}}</td>
+                <td><button type="button" (click)="deleteUser(selectedUser.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>    
+</div>-->
