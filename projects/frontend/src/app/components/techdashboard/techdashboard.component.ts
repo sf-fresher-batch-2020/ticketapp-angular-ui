@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { TicketService } from '../ticket.service';
-import { UserService } from '../user.service';
+import { AuthService } from '../../services/auth.service';
+import { TicketService } from '../../services/ticket.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-techdashboard',
@@ -11,8 +11,8 @@ import { UserService } from '../user.service';
 })
 export class TechdashboardComponent implements OnInit {
 
-  constructor(private router: Router, private authService: AuthService,
-    private ticketService: TicketService, private UserService: UserService) { }
+  constructor(private router: Router, 
+    private ticketService: TicketService) { }
 
   ticketList: any;
   ngOnInit(): void {

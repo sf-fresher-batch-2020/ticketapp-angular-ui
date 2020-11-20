@@ -11,12 +11,13 @@
                         </tr>
                         <tr>
                             <th>Title</th>
-                            <td>{{ticket.title}}</td>
+                            <td><input type="text" name="title" [(ngModel)]="ticket.title" required></td>
                         </tr>
                         <tr>
                             <th>Ticketstatus</th>
                             <td>
-                                <select name="ticketstatus" [(ngModel)]="ticket.ticketstatus">
+                                <select name="ticketstatus" [(ngModel)]="ticket.ticketstatus" required>
+                                    <option value="Open">Open</option>
                                     <option value="Close">Close</option>
                                 </select>
                             </td>
@@ -24,7 +25,7 @@
                         <tr>
                             <th>Priority</th>
                             <td>
-                                <select name="priority" [(ngModel)]="ticket.priority">
+                                <select name="priority" [(ngModel)]="ticket.priority" required>
                                     <option value="Low">Low</option>
                                     <option value="Medium">Medium</option>
                                     <option value="High">High</option>
@@ -34,7 +35,7 @@
                         <tr>
                             <th>Description</th>
                             <td>
-                                <textarea name="description" cols="30" rows="2" [(ngModel)]="ticket.description">
+                                <textarea name="description" cols="30" rows="2" [(ngModel)]="ticket.description" required>
                                 </textarea>
                             </td>
                         </tr>
@@ -45,7 +46,7 @@
                     </thead>
                 </table>
                 <div class="row justify-content-center">
-                    <button id="btn" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+                    <button id="btn" class="btn btn-success" [disabled]="f.invalid">Update</button>&nbsp;&nbsp;
                     <button class="btn btn-danger" (click)="deleteTicket(ticket.id)">Delete Ticket</button>
                 </div>
             </form>
