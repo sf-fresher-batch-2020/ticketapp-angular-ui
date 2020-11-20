@@ -1,0 +1,30 @@
+h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    font-family: "Philosopher", sans-serif;
+    color: #71c55d;
+  }
+    #tablestyle th{
+    background-color:rgb(27, 27, 136);
+    color:white;
+    font-size: 15px;
+    border-color: WHITE;
+    }
+   th{
+    border-collapse: separate;
+    border-spacing: 15px 50px;  
+    width: 30%;
+    line-height:90%;
+    text-align: center;
+    border-color: cornsilk;
+    }
+   
+   tr,td{
+    border-collapse: separate;
+    border-spacing: 15px 50px; 
+    text-align:left;
+    line-height:90%;
+    }

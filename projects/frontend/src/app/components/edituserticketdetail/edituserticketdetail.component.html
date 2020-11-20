@@ -1,0 +1,62 @@
+<h2>Edit User Ticket Detail</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form #f="ngForm" (ngSubmit)="updateTicket(ticket)" *ngIf="ticket">
+                <table class="table table-bordered" id="tablestyle">
+                    <thead>
+                        <tr>
+                            <th>Ticket No</th>
+                            <td>{{ticket.id}}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>{{ticket.title}}</td>
+                        </tr>
+                        <tr>
+                            <th>Ticketstatus</th>
+                            <td>
+                                <select name="ticketstatus" [(ngModel)]="ticket.ticketstatus">
+                                    <option value="Close">Close</option>
+                                    <option value="In-progress">In-progress</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Priority</th>
+                            <td>
+                                <select name="priority" [(ngModel)]="ticket.priority">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Assigned Team</th>
+                            <td>
+                                <select name="team" [(ngModel)]="ticket.team">
+                                    <option value="Development Team">Development Team</option>
+                                    <option value="Software Team">Software Team</option>
+                                    <option value="Networking Team">Networking Team</option>
+                                    <option value="Sales Team">Sales Team</option>
+                                    <option value="Hardware Team">Hardware Team</option>
+                                    <option value="Csml Team">Csml Team</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Created Date</th>
+                            <td>{{ticket.createdDate}}</td>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="row justify-content-center">
+                    <button id="btn" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
