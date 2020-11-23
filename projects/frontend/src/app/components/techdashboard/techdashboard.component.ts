@@ -62,32 +62,32 @@ filterByStatus(ticketstatus){
   });
 }
 
-filterByAssigned(team){
+filterByAssigned(teamAssign){
   this.ticketService.getMyTickets().subscribe(res => {
     let tickets: any = res;
     
     let filteredData = null;
-    if (team == 'ALL') {
+    if (teamAssign == 'ALL') {
       filteredData = tickets;
     }
     else {
-      filteredData = tickets.filter(obj => obj.team == team);
+      filteredData = tickets.filter(obj => obj.teamAssign == teamAssign);
     }
     console.log(filteredData);
     this.ticketList = filteredData;
   });
 }
 
-filterByUnassigned(team){
+filterByUnassigned(teamAssign){
   this.ticketService.getMyTickets().subscribe(res => {
     let tickets: any = res;
     
     let filteredData = null;
-    if (team == 'ALL') {
+    if (teamAssign == 'ALL') {
       filteredData = tickets;
     }
     else {
-      filteredData = tickets.filter(obj => obj.team == "");
+      filteredData = tickets.filter(obj => obj.teamAssign == "");
     }
     console.log(filteredData);
     this.ticketList = filteredData;

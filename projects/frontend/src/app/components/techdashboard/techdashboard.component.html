@@ -6,19 +6,19 @@
             <label>Search By Priority</label>
             <select name="priority" (change)="filterByPriority($event.target.value)">
                 <option value="ALL">--ALL--</option>
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
             </select>
         </div>
         <div class="col-3">
             <label>Search By Status</label>
             <select id="priority" (change)="filterByStatus($event.target.value)">
                 <option value="ALL">--ALL--</option>
-                <option value="Open">Open</option>
-                <option value="Close">Close</option>
-                <option value="In-progress">In-progress</option>
-                <option value="Completed">Completed</option>
+                <option value="open">Open</option>
+                <option value="close">Close</option>
+                <option value="in-progress">In-progress</option>
+                <option value="completed">Completed</option>
             </select>
         </div>
         <div class="col-3">
@@ -37,7 +37,7 @@
             <label>Search By Unassigned Ticket</label>
             <select id="priority" (change)="filterByUnassigned($event.target.value)">
                 <option value="ALL">--ALL--</option>
-                <option value="Team">Unassigned Ticket</option>    
+                <option value="teamAssign">Unassigned Ticket</option>    
             </select>
         </div>
     </div>
