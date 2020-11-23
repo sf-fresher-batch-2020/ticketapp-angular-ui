@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL :"http://ticketapp-angular.herokuapp.com/api"
+  API_URL :"https://ticketapp-rest-api.herokuapp.com/api"
 };

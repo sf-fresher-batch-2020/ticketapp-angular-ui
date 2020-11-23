@@ -27,13 +27,13 @@ export class UserticketComponent implements OnInit {
   priority: string;
   description: string;
   ticketstatus: string;
-  team: string;
+  teamAssign: string;
 
   ticket() {
     let ticketData = {
-      title: this.title, mobilenumber: this.mobile,
+      title: this.title, mobileNumber: this.mobile,
       department: this.department, priority: this.priority, description: this.description,
-      ticketstatus: 'Open', team: '', createdBy: this.loggedInUser.id, createdDate : new Date().toJSON()
+      ticketstatus: 'Open', teamAssign: '', createdBy: this.loggedInUser.id, createdDate : new Date().toJSON()
     };
     console.log(JSON.stringify(ticketData));
     this.ticketService.ticket(ticketData).subscribe(res => {

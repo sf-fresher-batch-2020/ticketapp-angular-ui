@@ -7,3 +7,7 @@ h2 {
     font-family: "Philosopher", sans-serif;
     color: #71c55d;
   }
+
+  #editbtn{
+    float: right;
+  }

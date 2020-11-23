@@ -17,9 +17,9 @@
                             <th>Ticketstatus</th>
                             <td>
                                 <select name="ticketstatus" [(ngModel)]="ticket.ticketstatus">
-                                    <option value="Close">Close</option>
-                                    <option value="In-progress">In-progress</option>
-                                    <option value="Completed">Completed</option>
+                                    <option value="close">Close</option>
+                                    <option value="in-progress">In-progress</option>
+                                    <option value="completed">Completed</option>
                                 </select>
                             </td>
                         </tr>
@@ -27,16 +27,16 @@
                             <th>Priority</th>
                             <td>
                                 <select name="priority" [(ngModel)]="ticket.priority">
-                                    <option value="Low">Low</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="High">High</option>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th>Assigned Team</th>
                             <td>
-                                <select name="team" [(ngModel)]="ticket.team">
+                                <select name="team" [(ngModel)]="ticket.teamAssign">
                                     <option value="Development Team">Development Team</option>
                                     <option value="Software Team">Software Team</option>
                                     <option value="Networking Team">Networking Team</option>

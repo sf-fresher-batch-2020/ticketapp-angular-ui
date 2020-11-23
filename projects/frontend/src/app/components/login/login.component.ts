@@ -39,11 +39,13 @@ export class LoginComponent implements OnInit {
         this.toastr.success("Successfully Login")
         this.authService.storeLoginDetails(loggedInUser);
         if (loggedInUser.role == "ADMIN") {
-          this.router.navigate(['techdashboard']);
+          window.location.href="techdashboard";
+          //this.router.navigate(['techdashboard']);
 
         }
         else {
-          this.router.navigate(['userticket']);
+          window.location.href="userticket";
+          //this.router.navigate(['userticket']);
         }
 
       }
