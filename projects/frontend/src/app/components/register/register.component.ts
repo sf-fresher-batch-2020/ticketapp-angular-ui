@@ -12,28 +12,39 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
-  constructor(private router:Router, private userService:UserService, private toastr:ToastrService) { }
+  users;
+  constructor(private router: Router, private userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.users = this.userService.getUsers();
   }
-  
+
   name: string;
   email: string;
   password: string;
   role: string;
 
-  register(form:NgForm) {
-    let formData = {name: this.name, email: this.email, password: this.password, role: this.role };
+  register(form: NgForm) {
+    let formData = { name: this.name, email: this.email, password: this.password, role: this.role };
     console.log(JSON.stringify(formData));
-   this.userService.register(formData).subscribe(res => {
+    this.userService.register(formData).subscribe(res => {
       console.log(res);
-     this.toastr.success("Successfully Registered");
-      form.reset();
-      this.router.navigate(['login']);
-    },err=>{
+
+      if (res["errorMessage"]) {
+        this.toastr.error(res["errorMessage"]);
+      }
+      else {
+        //alert("Successfully Registered");     
+        this.toastr.success("Successfully Registered");
+
+        form.reset();
+        this.router.navigate(['login']);
+      }
+
+    }, err => {
       console.error(err);
       this.toastr.error("Failed To Register");
+
     });
   }
 }
