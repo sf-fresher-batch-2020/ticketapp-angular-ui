@@ -87,7 +87,7 @@ filterByUnassigned(teamAssign){
       filteredData = tickets;
     }
     else {
-      filteredData = tickets.filter(obj => obj.teamAssign == "");
+      filteredData = tickets.filter(obj => obj.teamAssign == "null");
     }
  
     this.ticketList = filteredData;
