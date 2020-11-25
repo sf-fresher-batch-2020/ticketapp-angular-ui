@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   login(form:NgForm) {
    
     this.userService.getUsers().subscribe(res => {
-      console.log(res);
       let users: any = res;
       let userExists = false;
       let loggedInUser = null;
