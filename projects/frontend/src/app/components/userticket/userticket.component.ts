@@ -35,7 +35,7 @@ export class UserticketComponent implements OnInit {
       department: this.department, priority: this.priority, description: this.description,
       ticketstatus: 'Open', teamAssign: '', createdBy: this.loggedInUser.id, createdDate : new Date().toJSON()
     };
-    console.log(JSON.stringify(ticketData));
+   
     this.ticketService.ticket(ticketData).subscribe(res => {
       console.log(res);
       this.toastr.success("Successfully Generated Ticket");
