@@ -1,9 +1,9 @@
 <h2 id="hero">Create Account</h2>
-<form (ngSubmit)="register(f)" #f="ngForm" autocomplete="off">
+<form (ngSubmit)="register(f)" #f="ngForm" autocomplete="off" ngNativeValidate>
 
     <label>
       <p class="label-txt">ENTER YOUR EMAIL</p>
-      <input type="email" name="email" id="email" class="input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]="email" required autofocus>
+      <input type="email" name="email" id="email" class="input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]="email" required >
       <div class="line-box">
         <div class="line"></div>
       </div>
@@ -32,5 +32,5 @@
           <div class="line"></div>
         </div>
       </label>
-      <button [disabled]="f.invalid">Submit</button>
+      <button type="submit" >Submit</button>
   </form>
