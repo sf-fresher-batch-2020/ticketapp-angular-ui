@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
     let formData = { name: this.name, email: this.email, password: this.password, role: this.role };
     console.log(JSON.stringify(formData));
     this.userService.register(formData).subscribe(res => {
-      console.log(res);
 
       if (res["errorMessage"]) {
         this.toastr.error(res["errorMessage"]);
