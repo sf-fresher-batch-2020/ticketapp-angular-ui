@@ -16,19 +16,10 @@
 - AuthService
 
 
-#### Guard
-
-- AuthGuard
-
-
 #### Library
 
 - theme
 
-
-#### Pipes
-
-- RolePipe
 
 #### Directive
 
