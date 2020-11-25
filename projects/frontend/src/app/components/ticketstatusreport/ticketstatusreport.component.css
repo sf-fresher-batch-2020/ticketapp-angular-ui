@@ -1,0 +1,28 @@
+h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    font-family: "Philosopher", sans-serif;
+    color: #71c55d;
+  }
+
+  th{
+    background-color:rgb(27, 27, 136);
+    color:white;
+    
+    
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+tr:hover{
+    background-color: grey;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+  }

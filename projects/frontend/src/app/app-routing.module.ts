@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MyticketComponent } from './components/myticket/myticket.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TechdashboardComponent } from './components/techdashboard/techdashboard.component';
+import { TicketstatusreportComponent } from './components/ticketstatusreport/ticketstatusreport.component';
 import { UserticketComponent } from './components/userticket/userticket.component';
 import { UserticketdetailComponent } from './components/userticketdetail/userticketdetail.component';
 import { ViewticketdetailComponent } from './components/viewticketdetail/viewticketdetail.component';
@@ -25,7 +26,9 @@ const routes: Routes = [
   {path:'techdashboard',component:TechdashboardComponent},
   {path:'userticketdetail/:id',component:UserticketdetailComponent},
   {path:'edituserticketdetail/:id',component:EdituserticketdetailComponent},
+  {path:'ticketstatusreport',component:TicketstatusreportComponent},
   {path:'', redirectTo:'login', pathMatch:'full'}
+  
 ];
 
 @NgModule({

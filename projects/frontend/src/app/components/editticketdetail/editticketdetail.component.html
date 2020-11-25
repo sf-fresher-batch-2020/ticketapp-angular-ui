@@ -1,5 +1,14 @@
 <h2>Edit Ticket Detail</h2>
-<div class="container-fluid">
+<hr>
+<ng-template #loading >
+    <div class="text-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; margin-top:10%;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+</ng-template>
+
+<div class="container-fluid "*ngIf="ticket else loading">
     <div class="row">
         <div class="col-12">
             <form #f="ngForm" (ngSubmit)="updateTicket(ticket)" *ngIf="ticket">
@@ -15,7 +24,10 @@
                         </tr>
                         <tr>
                             <th>Ticketstatus</th>
-                            <td>
+                            <td *ngIf="ticket.ticketstatus=='in-progress' || ticket.ticketstatus== 'completed'">
+                                {{ticket.ticketstatus}}
+                            </td>
+                            <td *ngIf="ticket.ticketstatus =='open' || ticket.ticketstatus == 'close'">
                                 <select name="ticketstatus" [(ngModel)]="ticket.ticketstatus" required>
                                     <option value="open">Open</option>
                                     <option value="close">Close</option>
@@ -35,13 +47,18 @@
                         <tr>
                             <th>Description</th>
                             <td>
-                                <textarea name="description" cols="30" rows="2" [(ngModel)]="ticket.description" required>
+                                <textarea name="description" cols="100" rows="5" [(ngModel)]="ticket.description"
+                                    required>
                                 </textarea>
                             </td>
                         </tr>
                         <tr>
                             <th>Created Date</th>
                             <td>{{ticket.createdDate}}</td>
+                        </tr>
+                        <tr>
+                            <th>Late Updated Date</th>
+                            <td>{{ticket.modifiedDate}}</td>
                         </tr>
                     </thead>
                 </table>

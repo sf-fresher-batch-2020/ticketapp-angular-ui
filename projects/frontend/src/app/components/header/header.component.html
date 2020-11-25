@@ -12,8 +12,10 @@
                     aria-expanded="false">Services</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" routerLink="userticket" data-loggedin=true>Generate Ticket</a>
-                    <a class="dropdown-item" routerLink="myticket" data-loggedin=true>My Tickets</a>
                 </div>
+            </li>
+            <li class="nav-item" *ngIf="loggedInUser && loggedInUser.role=='USER'">
+                <a class="nav-link" routerLink="myticket" data-loggedin=true routeLink="myticket">My Tickets</a>
             </li>
             <li class="nav-item" *ngIf="loggedInUser && loggedInUser.role=='ADMIN'">
                 <a class="nav-link" routerLink="techdashboard" data-loggedin=true routeLink="techdashboard">Admin
@@ -21,6 +23,9 @@
             </li>
             <li class="nav-item" *ngIf="loggedInUser && loggedInUser.role=='ADMIN'">
                 <a class="nav-link" routerLink="listuser" data-loggedin=true routeLink="listuser">List All User</a>
+            </li>
+            <li class="nav-item" *ngIf="loggedInUser && loggedInUser.role=='ADMIN'">
+                <a class="nav-link" routerLink="ticketstatusreport" data-loggedin=true routeLink="ticketstatusreport">Ticket Status Report</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

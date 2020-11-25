@@ -41,7 +41,7 @@ export class TechdashboardComponent implements OnInit {
       else {
         filteredData = tickets.filter(obj => obj.priority == priority);
       }
-      console.log(filteredData);
+
       this.ticketList = filteredData;
     });
   }
@@ -57,7 +57,7 @@ filterByStatus(ticketstatus){
     else {
       filteredData = tickets.filter(obj => obj.ticketstatus == ticketstatus);
     }
-    console.log(filteredData);
+   
     this.ticketList = filteredData;
   });
 }
@@ -73,7 +73,7 @@ filterByAssigned(teamAssign){
     else {
       filteredData = tickets.filter(obj => obj.teamAssign == teamAssign);
     }
-    console.log(filteredData);
+
     this.ticketList = filteredData;
   });
 }
@@ -89,7 +89,7 @@ filterByUnassigned(teamAssign){
     else {
       filteredData = tickets.filter(obj => obj.teamAssign == "");
     }
-    console.log(filteredData);
+ 
     this.ticketList = filteredData;
   });
 }
