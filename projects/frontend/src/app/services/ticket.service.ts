@@ -19,7 +19,14 @@ export class TicketService {
     let url = this.apiUrl + "/tickets";
     return this.http.get(url);
   }
-
+  getTicketStatus(){
+    let url = this.apiUrl + "/ticketsstatus";
+    return this.http.get(url);
+  }
+  getTicketTeamStatus(){
+    let url = this.apiUrl + "/teamtickets";
+    return this.http.get(url);
+  }
 
   getTicket(id:number) {
     let url = this.apiUrl + "/tickets/"+id;

@@ -1,6 +1,14 @@
 <h2 id="hero">My Ticket</h2>
+<hr>
+<ng-template #loading >
+    <div class="text-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; margin-top:10%;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+</ng-template>
 
-<div class="container-fluid">
+<div class="container-fluid "*ngIf="ticketList else loading">
     <div class="row">
         <div class="col-12">
             <button routerLink="../userticket" class="btn btn-info" id="editbtn">Click To Generate Ticket</button>

@@ -19,6 +19,7 @@ import { UserticketComponent } from './components/userticket/userticket.componen
 import { UserticketdetailComponent } from './components/userticketdetail/userticketdetail.component';
 import { ViewticketdetailComponent } from './components/viewticketdetail/viewticketdetail.component';
 import { HomeComponent } from './components/home/home.component';
+import { TicketstatusreportComponent } from './components/ticketstatusreport/ticketstatusreport.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HomeComponent } from './components/home/home.component';
     TechdashboardComponent,
     UserticketdetailComponent,
     EdituserticketdetailComponent,
-    HomeComponent
+    HomeComponent,
+    TicketstatusreportComponent
   ],
   imports: [
     BrowserModule,

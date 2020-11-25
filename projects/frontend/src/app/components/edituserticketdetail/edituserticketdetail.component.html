@@ -1,5 +1,14 @@
 <h2>Edit User Ticket Detail</h2>
-<div class="container-fluid">
+<hr>
+<ng-template #loading >
+    <div class="text-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; margin-top:10%;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+</ng-template>
+
+<div class="container-fluid "*ngIf="ticket else loading">
     <div class="row">
         <div class="col-12">
             <form #f="ngForm" (ngSubmit)="updateTicket(ticket)" *ngIf="ticket">
@@ -49,6 +58,10 @@
                         <tr>
                             <th>Created Date</th>
                             <td>{{ticket.createdDate}}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Updated Date</th>
+                            <td>{{ticket.modifiedDate}}</td>
                         </tr>
                     </thead>
                 </table>
