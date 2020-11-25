@@ -12,21 +12,22 @@ import { TicketstatusreportComponent } from './components/ticketstatusreport/tic
 import { UserticketComponent } from './components/userticket/userticket.component';
 import { UserticketdetailComponent } from './components/userticketdetail/userticketdetail.component';
 import { ViewticketdetailComponent } from './components/viewticketdetail/viewticketdetail.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'home',component:HomeComponent},
-  {path:'listuser',component:ListuserComponent},
-  {path:'userticket',component:UserticketComponent},
-  {path:'myticket',component:MyticketComponent},
-  {path:'viewticketdetail/:id',component:ViewticketdetailComponent},
-  {path:'editticketdetail/:id',component:EditticketdetailComponent},
-  {path:'techdashboard',component:TechdashboardComponent},
-  {path:'userticketdetail/:id',component:UserticketdetailComponent},
-  {path:'edituserticketdetail/:id',component:EdituserticketdetailComponent},
-  {path:'ticketstatusreport',component:TicketstatusreportComponent},
+  {path:'listuser',component:ListuserComponent,canActivate:[AuthGuard]},
+  {path:'userticket',component:UserticketComponent,canActivate:[AuthGuard]},
+  {path:'myticket',component:MyticketComponent,canActivate:[AuthGuard]},
+  {path:'viewticketdetail/:id',component:ViewticketdetailComponent,canActivate:[AuthGuard]},
+  {path:'editticketdetail/:id',component:EditticketdetailComponent,canActivate:[AuthGuard]},
+  {path:'techdashboard',component:TechdashboardComponent,canActivate:[AuthGuard]},
+  {path:'userticketdetail/:id',component:UserticketdetailComponent,canActivate:[AuthGuard]},
+  {path:'edituserticketdetail/:id',component:EdituserticketdetailComponent,canActivate:[AuthGuard]},
+  {path:'ticketstatusreport',component:TicketstatusreportComponent,canActivate:[AuthGuard]},
   {path:'', redirectTo:'login', pathMatch:'full'}
   
 ];
