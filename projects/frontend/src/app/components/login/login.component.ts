@@ -19,39 +19,28 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(form:NgForm) {
-   
-    this.userService.getUsers().subscribe(res => {
-      let users: any = res;
-      let userExists = false;
-      let loggedInUser = null;
-      for (let obj of users) {
-        if (obj.email == this.email && obj.password == this.password) {
-          userExists = true;
-          delete obj["password"];
-          loggedInUser = obj;
-          break;
-        }
-      }
-      if (userExists) {
-        form.reset();
-        this.toastr.success("Successfully Login")
-        this.authService.storeLoginDetails(loggedInUser);
-        if (loggedInUser.role == "ADMIN") {
-          window.location.href="techdashboard";
-          //this.router.navigate(['techdashboard']);
+  login(form: NgForm) {
+    let user = { email: this.email, password: this.password }
+    this.userService.login(user).subscribe(res => {
 
-        }
-        else {
-          window.location.href="userticket";
-          //this.router.navigate(['userticket']);
-        }
+      let loggedInUser: any = res;
+
+      form.reset();
+      this.toastr.success("Successfully Login")
+      this.authService.storeLoginDetails(loggedInUser);
+      if (loggedInUser.role == "ADMIN") {
+        window.location.href = "techdashboard";
+        //this.router.navigate(['techdashboard']);
 
       }
       else {
-        this.toastr.error("Invalid Credentials");
+        window.location.href = "userticket";
+        //this.router.navigate(['userticket']);
       }
-    });
 
+    }, err => {
+      this.toastr.error("Invalid Credentials");
+    }
+    );
   }
 }
