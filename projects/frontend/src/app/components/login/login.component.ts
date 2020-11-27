@@ -20,27 +20,26 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
-    let user = { email: this.email, password: this.password }
+    let user = { email: this.email, password: this.password}
     this.userService.login(user).subscribe(res => {
-
       let loggedInUser: any = res;
-
       form.reset();
-      this.toastr.success("Successfully Login")
-      this.authService.storeLoginDetails(loggedInUser);
-      if (loggedInUser.role == "ADMIN") {
+     
+      if (res["errorMessage"]) {
+        this.toastr.error(res["errorMessage"]);
+        
+      }
+      else if (loggedInUser.role == "ADMIN") {
         window.location.href = "techdashboard";
+        this.toastr.success("Successfully Login")
+        this.authService.storeLoginDetails(loggedInUser);
         //this.router.navigate(['techdashboard']);
-
       }
       else {
         window.location.href = "userticket";
-        //this.router.navigate(['userticket']);
+        this.toastr.success("Successfully Login")
+        this.authService.storeLoginDetails(loggedInUser);
       }
-
-    }, err => {
-      this.toastr.error("Invalid Credentials");
-    }
-    );
+    });
   }
 }
