@@ -19,7 +19,6 @@ export class ListuserComponent implements OnInit {
     this.listUsers();
   }
   listUsers() {
-    console.log("Fetch All users from mock backend api");
     this.userService.getUsers().subscribe(res => {
       let users:any = res;
       this.user = users.filter(obj => obj.role == "USER");

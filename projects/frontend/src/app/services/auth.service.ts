@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,4 +27,14 @@ export class AuthService {
   storeLoginDetails(userObj){
     localStorage.setItem("LOGGED_IN_USER", JSON.stringify(userObj));
   }
+
+/*  getHeaders(){
+    let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    let token = user!= null ? user.token : null;
+    const headers = new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      })
+    return headers;
+    }*/
 }

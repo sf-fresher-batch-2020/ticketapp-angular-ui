@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { EditticketdetailComponent } from './components/editticketdetail/editticketdetail.component';
@@ -20,6 +20,7 @@ import { UserticketdetailComponent } from './components/userticketdetail/usertic
 import { ViewticketdetailComponent } from './components/viewticketdetail/viewticketdetail.component';
 import { HomeComponent } from './components/home/home.component';
 import { TicketstatusreportComponent } from './components/ticketstatusreport/ticketstatusreport.component';
+import { BasicAuthInterceptor } from './services/basic-auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,9 @@ import { TicketstatusreportComponent } from './components/ticketstatusreport/tic
     ToastrModule.forRoot()
     
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

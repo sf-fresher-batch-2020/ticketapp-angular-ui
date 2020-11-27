@@ -2,15 +2,15 @@
 <form (ngSubmit)="register(f)" #f="ngForm" autocomplete="off" ngNativeValidate>
 
     <label>
-      <p class="label-txt">ENTER YOUR EMAIL</p>
-      <input type="email" name="email" id="email" class="input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]="email" required >
+      <p class="label-txt">ENTER YOUR NAME</p>
+      <input type="text" name="name" class="input" id="name"  [(ngModel)]="name" required >
       <div class="line-box">
         <div class="line"></div>
       </div>
     </label>
     <label>
-      <p class="label-txt">ENTER YOUR NAME</p>
-      <input type="text" name="name" class="input" id="name"  [(ngModel)]="name" required >
+      <p class="label-txt">ENTER YOUR EMAIL</p>
+      <input type="email" name="email" id="email" class="input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]="email" required >
       <div class="line-box">
         <div class="line"></div>
       </div>
