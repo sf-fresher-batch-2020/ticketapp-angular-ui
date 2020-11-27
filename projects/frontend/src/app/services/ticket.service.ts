@@ -39,7 +39,6 @@ export class TicketService {
     return this.http.post(url,ticket);
   }
 
-
   updateStatus(ticket)
   {
     let url = this.apiUrl + "/tickets/"+ ticket.id;
