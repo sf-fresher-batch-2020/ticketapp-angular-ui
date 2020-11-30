@@ -23,19 +23,19 @@ export class LoginComponent implements OnInit {
     let user = { email: this.email, password: this.password}
     this.userService.login(user).subscribe(res => {
       let loggedInUser: any = res;
-      form.reset();
-     
       if (res["errorMessage"]) {
         this.toastr.error(res["errorMessage"]);
         
       }
       else if (loggedInUser.role == "ADMIN") {
+        form.reset();
         window.location.href = "techdashboard";
         this.toastr.success("Successfully Login")
         this.authService.storeLoginDetails(loggedInUser);
         //this.router.navigate(['techdashboard']);
       }
       else {
+        form.reset();
         window.location.href = "userticket";
         this.toastr.success("Successfully Login")
         this.authService.storeLoginDetails(loggedInUser);
