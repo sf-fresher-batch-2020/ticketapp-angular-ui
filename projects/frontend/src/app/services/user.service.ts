@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 
@@ -19,6 +20,11 @@ export class UserService {
     return this.http.get(url);
   }
   
+  sendMail(user): Observable<any> {
+    const url = this.apiUrl + '/users/mail';
+    return this.http.post(url, user);
+  }
+
   login(user) {
     let url = this.apiUrl + "/users/login";
     return this.http.post(url, user);

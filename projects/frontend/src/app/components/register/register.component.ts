@@ -23,11 +23,12 @@ export class RegisterComponent implements OnInit {
   email: string;
   password: string;
   role: string;
-
+ 
   register(form: NgForm) {
+    
     let formData = { name: this.name, email: this.email, password: this.password, role: this.role };
     this.userService.register(formData).subscribe(res => {
-
+        this.userService.sendMail(formData).subscribe( );
       if (res["errorMessage"]) {
         this.toastr.error(res["errorMessage"]);
       }
